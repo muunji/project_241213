@@ -38,9 +38,25 @@ const holiday = ["01-01","01-28","01-29","01-30","03-03","05-05","06-06","08-15"
 //예약 가능 시간대 출력
 
 //예약한 날짜, 해당 병원 이용자 수
-const reserveDay = new Date('');
+const reserveDay = new Date('2025/02/06 10:00:00');
 const userNum = 5;
+console.log(reserveDay);
 
 //예약한 날짜에 대해 대기시간 출력
 //if 사용자 시간 === 예약시간, 대기시간 = 이용자수 x 5분
 //if 사용자 시간 < 예약시간, 대기시간 = 예약시간 - 사용자시간 + 이용자수 X 5분
+function waitTime() {
+  let time = '';
+  let perMin = 5;
+  const calc = reserveDay.getTime() - userDate.getTime();
+
+  if(calc === 0 && userNum>0) {
+    time = userNum * perMin;
+    console.log(time+"일")
+  } else if (calc >0) {
+    time = calc / (24*60*60*1000);
+    console.log(time+"일");
+  }
+}
+
+waitTime();
