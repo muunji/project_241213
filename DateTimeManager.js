@@ -1,6 +1,14 @@
 //사용자 시간 가져오기
+const userDate = new Date();
+console.log(userDate);
+console.log(userDate.toString());
+
 //타임존 시간계산
 //시간 간격 : 1년 (예약), 1일 (안내문자), 1시간 (알림)
+// const duration = {year:}
+
+//출력 형식 지정 yyyy-mm-dd HH-mm
+
 //운영 시간 
 //휴일
 
