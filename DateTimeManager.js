@@ -10,7 +10,7 @@ const min = 60*1000;
 const duration = {hour : 60*min, day: 60*24*min, yaer: 365*60*24*min};
 
 //출력 형식 지정 yyyy-mm-dd HH-mm
-function getDate() {
+function formatDate() {
   const year = userDate.getFullYear(); //2024
   const month = (userDate.getMonth()+1).toString();//12
   const day = userDate.getDate().toString()//13
@@ -27,10 +27,12 @@ function getDate() {
   return result;
 }
 
-console.log(getDate());
+console.log(formatDate());
 
 //운영 시간 
+const businessHours = {start : {time: "09:00", day:"monday"}, end : {time: "18:00", day:"friday"}}
 //휴일
+const holiday = ["01-01","01-28","01-29","01-30","03-03","05-05","06-06","08-15","10-03","12-25"];
 
 //사용자 시간 -> 표준 시간(형식화된)으로 출력
 //예약 가능 시간대 출력
